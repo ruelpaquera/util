@@ -36,7 +36,6 @@ Package.on_use(function (api) {
       'random',
       'minimongo',
       'ejson',
-      'ground-util',
       'ejson-minimax'
       ], ['client', 'server']);
 
@@ -54,7 +53,7 @@ Package.on_test(function (api) {
   if (api.versionsFrom) {
     api.use('ground:util', ['client', 'server']);
   } else {
-    api.use('util', ['client', 'server']);
+    api.use('ground-util', ['client', 'server']);
   }
   api.use('test-helpers', 'client');
   api.use(['tinytest', 'underscore', 'ejson']);
