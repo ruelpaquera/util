@@ -45,7 +45,9 @@ Package.on_use(function (api) {
   }
 
 
-  api.add_files('util.js', ['client', 'server']);
+  api.add_files('util.client.js', 'client');
+
+  api.add_files('util.server.js', 'server');
 });
 
 Package.on_test(function (api) {
@@ -57,6 +59,6 @@ Package.on_test(function (api) {
   api.use('test-helpers', 'client');
   api.use(['tinytest', 'underscore', 'ejson']);
 
-  api.add_files('util.tests.js', ['client', 'server']);
+  api.add_files('util.tests.js', 'client');
 
 });

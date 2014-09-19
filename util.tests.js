@@ -7,12 +7,12 @@ function equals(a, b) {
 Tinytest.add('GroundDB - Util - test', function(test) {
   // Basic test of scope and mappings
   test.isTrue(typeof _groundUtil !== 'undefined', '_groundUtil scope is not defined');
-  test.isTrue(typeof _groundUtil.connection == 'function', '_groundUtil.connection is not a function');
+  test.isTrue(typeof _groundUtil.connection == 'object', '_groundUtil.connection is not a object');
   test.isTrue(typeof _groundUtil.idParse == 'function', '_groundUtil.idParse is not a function');
   test.isTrue(typeof _groundUtil.getDatabaseMap == 'function', '_groundUtil.getDatabaseMap is not a function');
   test.isTrue(typeof _groundUtil.Collection == 'function', '_groundUtil.Collection is not a function');
   test.isTrue(typeof _groundUtil.subscriptionsReady == 'boolean', '_groundUtil.subscriptionsReady is not boolean');
-  test.isTrue(typeof _groundUtil.subscriptionsReadyDeps == 'function', '_groundUtil.subscriptionsReadyDeps is not a function');
+  test.isTrue(typeof _groundUtil.subscriptionsReadyDeps == 'object', '_groundUtil.subscriptionsReadyDeps is not a object');
 
 });
 

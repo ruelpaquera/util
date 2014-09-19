@@ -6,7 +6,7 @@ _groundUtil = {};
 ////////////////////////////////////////////////////////////////////////////////
 
 // Meteor connection
-_groundUtil.connection = Meteor.connection || Meteor.default_connection;
+_groundUtil.connection = _groundUtil.connection || Meteor.default_connection;
 
 // ParseId function
 _groundUtil.idParse = LocalCollection && LocalCollection._idParse ||
@@ -20,7 +20,6 @@ _groundUtil.getDatabaseMap = function(col) {
   // XXX: Suport older styles?
   return col._collection._docs._map;
 };
-
 
 // State of all subscriptions in meteor
 _groundUtil.subscriptionsReady = false;
@@ -54,3 +53,23 @@ _groundUtil.OneTimeout = function() {
     }, delay);
   };
 };
+
+//////////////////////////// ALL SUBSCRIPTIONS READY ///////////////////////////
+
+// Could be nice to have a Meteor.allSubscriptionsReady
+Meteor.setInterval(function() {
+    var allReady = true;
+    for (var subId in _groundUtil.connection._subscriptions) {
+      var sub = _groundUtil.connection._subscriptions[subId];
+      if (!sub.ready) {
+        allReady = false;
+        break;
+      }
+    }
+    // Update dependencies
+    if (allReady !== _groundUtil.subscriptionsReady) {
+      _groundUtil.subscriptionsReady = allReady;
+      _groundUtil.subscriptionsReadyDeps.changed();
+    }
+
+  }, 1000);
