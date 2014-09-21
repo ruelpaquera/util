@@ -22,8 +22,8 @@ _groundUtil.getDatabaseMap = function(col) {
 };
 
 // State of all subscriptions in meteor
-_groundUtil.subscriptionsReady = false;
-_groundUtil.subscriptionsReadyDeps = new Deps.Dependency();
+var _subscriptionsReady = false;
+var _subscriptionsReadyDeps = new Deps.Dependency();
 
 /////////////////////////////// ONE TIME OUT ///////////////////////////////////
 
@@ -56,6 +56,11 @@ _groundUtil.OneTimeout = function() {
 
 //////////////////////////// ALL SUBSCRIPTIONS READY ///////////////////////////
 
+_groundUtil.allSubscriptionsReady = function() {
+  _subscriptionsReadyDeps.depend();
+  return _subscriptionsReady;
+};
+
 // Could be nice to have a Meteor.allSubscriptionsReady
 Meteor.setInterval(function() {
     var allReady = true;
@@ -67,9 +72,9 @@ Meteor.setInterval(function() {
       }
     }
     // Update dependencies
-    if (allReady !== _groundUtil.subscriptionsReady) {
-      _groundUtil.subscriptionsReady = allReady;
-      _groundUtil.subscriptionsReadyDeps.changed();
+    if (allReady !== _subscriptionsReady) {
+      _subscriptionsReady = allReady;
+      _subscriptionsReadyDeps.changed();
     }
 
   }, 1000);
