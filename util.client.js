@@ -78,3 +78,11 @@ Meteor.setInterval(function() {
     }
 
   }, 1000);
+
+//////////////////////////////// UNDERSCORE DEPS ///////////////////////////////
+
+_groundUtil.each = _.each;
+
+_groundUtil.toArray = _.toArray;
+
+_groundUtil.extend = _.extend;
