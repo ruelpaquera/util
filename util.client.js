@@ -7,6 +7,13 @@ Ground = {};
 // MAP METEOR API's
 ////////////////////////////////////////////////////////////////////////////////
 
+// Access the DDP connection class
+try {
+  _groundUtil.Connection = Package['ddp'].LivedataTest.Connection;
+} catch(err) {
+  throw new Error('GroundDB cannot access the DDP.Connection class');
+}
+
 // Meteor connection
 _groundUtil.connection = _groundUtil.connection || Meteor.default_connection;
 
