@@ -31,34 +31,23 @@ _groundUtil.getDatabaseMap = function(col) {
 };
 
 // State of all subscriptions in meteor
-var _subscriptionsReady = false;
-var _subscriptionsReadyDeps = new Deps.Dependency();
-
+var _subscriptionsReady = new ReactiveVar(false);
 
 //////////////////////////// ALL SUBSCRIPTIONS READY ///////////////////////////
 
 _groundUtil.allSubscriptionsReady = function() {
-  _subscriptionsReadyDeps.depend();
-  return _subscriptionsReady;
+  return _subscriptionsReady.get();
 };
 
 // Could be nice to have a Meteor.allSubscriptionsReady
-Meteor.setInterval(function() {
-    var allReady = true;
-    for (var subId in _groundUtil.connection._subscriptions) {
-      var sub = _groundUtil.connection._subscriptions[subId];
-      if (!sub.ready) {
-        allReady = false;
-        break;
-      }
-    }
-    // Update dependencies
-    if (allReady !== _subscriptionsReady) {
-      _subscriptionsReady = allReady;
-      _subscriptionsReadyDeps.changed();
-    }
-
-  }, 1000);
+var readyInterval = Meteor.setInterval(function() {
+  if (DDP._allSubscriptionsReady()) {
+    // Stop this madness
+    Meteor.clearInterval(readyInterval);
+    // Set the reactive var
+    _subscriptionsReady.set(true);
+  }
+}, 1000);
 
 //////////////////////////////// UNDERSCORE DEPS ///////////////////////////////
 
