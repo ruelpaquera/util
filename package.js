@@ -1,6 +1,6 @@
 Package.describe({
   name: "ground:util",
-  version: "0.1.1",
+  version: "0.1.2",
   summary: "Adds utillity functions for ground db to use",
   git: "https://github.com/GroundMeteor/util.git"  
 });
@@ -22,7 +22,7 @@ Package.on_use(function (api) {
     'minimongo',
     'ejson',
     'reactive-var',
-    'ground:minimax@0.0.0'
+    'ground:minimax@1.0.1'
     ], ['client', 'server']);
 
   api.use(['tracker'], 'client');    
