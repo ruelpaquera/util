@@ -5,7 +5,7 @@ Package.describe({
   git: "https://github.com/GroundMeteor/util.git"  
 });
 
-Package.on_use(function (api) {
+Package.onUse(function (api) {
 
 
   api.export('_groundUtil');
@@ -29,16 +29,16 @@ Package.on_use(function (api) {
 
   api.use(['tracker'], 'client');    
 
-  api.add_files('util.client.js', 'client');
+  api.addFiles('util.client.js', 'client');
 
-  api.add_files('util.server.js', 'server');
+  api.addFiles('util.server.js', 'server');
 });
 
-Package.on_test(function (api) {
+Package.onTest(function (api) {
   api.use('ground:util', ['client', 'server']);
   api.use('test-helpers', 'client');
   api.use(['tinytest', 'underscore', 'ejson']);
 
-  api.add_files('util.tests.js', 'client');
+  api.addFiles('util.tests.js', 'client');
 
 });
