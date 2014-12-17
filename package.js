@@ -1,6 +1,6 @@
 Package.describe({
   name: "ground:util",
-  version: "0.1.6",
+  version: "0.1.7",
   summary: "Adds utillity functions for ground db to use",
   git: "https://github.com/GroundMeteor/util.git"  
 });
