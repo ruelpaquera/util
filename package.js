@@ -2,7 +2,7 @@ Package.describe({
   name: "ground:util",
   version: "0.1.7",
   summary: "Adds utillity functions for ground db to use",
-  git: "https://github.com/GroundMeteor/util.git"  
+  git: "https://github.com/GroundMeteor/util.git"
 });
 
 Package.onUse(function (api) {
@@ -27,7 +27,9 @@ Package.onUse(function (api) {
 
   api.imply('ground:minimax', ['client', 'server']);
 
-  api.use(['tracker'], 'client');    
+  api.use(['tracker'], 'client');
+
+  api.addFiles('util.common.js', ['client', 'server']);
 
   api.addFiles('util.client.js', 'client');
 

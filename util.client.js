@@ -1,8 +1,3 @@
-// Define the utillity scope
-_groundUtil = {};
-
-// New ground scope
-Ground = {};
 ////////////////////////////////////////////////////////////////////////////////
 // MAP METEOR API's
 ////////////////////////////////////////////////////////////////////////////////
@@ -20,9 +15,6 @@ _groundUtil.connection = _groundUtil.connection || Meteor.default_connection;
 // ParseId function
 _groundUtil.idParse = LocalCollection && LocalCollection._idParse ||
         Meteor.idParse;
-
-// Meteor.Collection or Mongo.Collection
-_groundUtil.Collection = (typeof Mongo !== 'undefined')? Mongo.Collection: Meteor.Collection;
 
 // Get the database map
 _groundUtil.getDatabaseMap = function(col) {
