@@ -1,6 +1,18 @@
 # Changelog
 
 ## vCurrent
+## [v0.1.9] (https://github.com/GroundMeteor/util/tree/v0.1.9)
+#### 21/12/14 by Morten Henriksen
+## [v0.1.8] (https://github.com/GroundMeteor/util/tree/v0.1.8)
+#### 20/12/14 by Morten Henriksen
+- add changelog
+
+- Bump to version 0.1.8
+
+- Add server specific apis
+
+- Add _groundUtil.Collection to the common.js making it work for both client and server
+
 ## [v0.1.7] (https://github.com/GroundMeteor/util/tree/v0.1.7)
 #### 17/12/14 by Morten Henriksen
 ## [v0.1.6] (https://github.com/GroundMeteor/util/tree/v0.1.6)
