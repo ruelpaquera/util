@@ -22,7 +22,7 @@ Package.onUse(function (api) {
     'minimongo',
     'ejson',
     'reactive-var',
-    'ground:minimax@1.1.0'
+    'ground:minimax@1.1.1'
     ], ['client', 'server']);
 
   api.imply('ground:minimax', ['client', 'server']);
