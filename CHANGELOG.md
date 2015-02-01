@@ -1,6 +1,8 @@
 # Changelog
 
 ## vCurrent
+## [v0.1.10] (https://github.com/GroundMeteor/util/tree/v0.1.10)
+#### 31/01/15 by Morten Henriksen
 ## [v0.1.9] (https://github.com/GroundMeteor/util/tree/v0.1.9)
 #### 21/12/14 by Morten Henriksen
 ## [v0.1.8] (https://github.com/GroundMeteor/util/tree/v0.1.8)
