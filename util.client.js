@@ -29,7 +29,7 @@ _groundUtil.setDatabaseMap = function(col, map) {
 
 _groundUtil.invalidateDb = function(col) {
   // We need to invalidate all listening queries
-  _.each(col.db._collection.queries, function(query, i) {
+  _.each(col._collection.queries, function(query, i) {
     // This db has changed big time...
     query.changed();
   });
