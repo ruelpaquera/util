@@ -22,6 +22,19 @@ _groundUtil.getDatabaseMap = function(col) {
   return col._collection._docs._map;
 };
 
+_groundUtil.setDatabaseMap = function(col, map) {
+  // XXX: Suport older styles?
+  col._collection._docs._map = map;
+};
+
+_groundUtil.invalidateDb = function(col) {
+  // We need to invalidate all listening queries
+  _.each(col.db._collection.queries, function(query, i) {
+    // This db has changed big time...
+    query.changed();
+  });
+};
+
 // State of all subscriptions in meteor
 var _subscriptionsReady = new ReactiveVar(false);
 

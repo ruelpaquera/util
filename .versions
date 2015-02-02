@@ -14,8 +14,8 @@ fastclick@1.0.2
 follower-livedata@1.0.3
 geojson-utils@1.0.2
 ground:dictionary@0.2.0
-ground:minimax@1.1.1
-ground:util@0.1.10
+ground:minimax@1.1.2
+ground:util@0.1.11
 html-tools@1.0.3
 htmljs@1.0.3
 http@1.0.10
@@ -24,7 +24,7 @@ jquery@1.11.3
 json@1.0.2
 launch-screen@1.0.1
 livedata@1.0.12
-local-test:ground:util@0.1.10
+local-test:ground:util@0.1.11
 logging@1.0.6
 meteor@1.1.4
 meteor-platform@1.2.1
