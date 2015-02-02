@@ -1,6 +1,10 @@
 # Changelog
 
 ## vCurrent
+## [v0.1.12] (https://github.com/GroundMeteor/util/tree/v0.1.12)
+#### 02/02/15 by Morten Henriksen
+- add set database map and invalidate db
+
 ## [v0.1.11] (https://github.com/GroundMeteor/util/tree/v0.1.11)
 #### 01/02/15 by Morten Henriksen
 ## [v0.1.10] (https://github.com/GroundMeteor/util/tree/v0.1.10)
