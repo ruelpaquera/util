@@ -4,7 +4,14 @@
 
 // Access the DDP connection class
 try {
-  _groundUtil.Connection = Package['ddp'].LivedataTest.Connection;
+  var _DDP = Package.ddp.LivedataTest;
+  if (_DDP) {
+    _DDP = _DDP.Connection;
+  } else {
+    _DDP = Meteor.connection.constructor;
+  }
+
+  _groundUtil.Connection = _DDP;
 } catch(err) {
   throw new Error('GroundDB cannot access the DDP.Connection class');
 }
@@ -14,7 +21,7 @@ _groundUtil.connection = _groundUtil.connection || Meteor.default_connection;
 
 // ParseId function
 _groundUtil.idParse = LocalCollection && LocalCollection._idParse ||
-        Meteor.idParse;
+        Meteor.idParse || MongoID.idParse;
 
 // Get the database map
 _groundUtil.getDatabaseMap = function(col) {
