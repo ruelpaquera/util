@@ -18,6 +18,8 @@ Package.onUse(function (api) {
   api.use([
     'meteor',
     'underscore',
+    'mongo-id',
+    'ddp',
     'random',
     'minimongo',
     'ejson',
