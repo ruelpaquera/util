@@ -1,12 +1,4 @@
 {
-   // JSHint Meteor Configuration File
-   // Match the Meteor Style Guide
-   //
-   // By @raix with contributions from @aldeed and @awatson1978
-   // Source https://github.com/raix/Meteor-jshintrc
-   //
-   // See http://jshint.com/docs/ for more details
-
 	"maxerr": 50,
 	"bitwise": true,
 	"camelcase": true,
@@ -24,7 +16,7 @@
 	"quotmark": false,
 	"undef": true,
 	"unused": true,
-	"strict": true,
+	"strict": false,
 	"trailing": true,
 	"maxparams": false,
 	"maxdepth": false,
@@ -41,7 +33,7 @@
 	"evil": false,
 	"expr": false,
 	"funcscope": false,
-	"globalstrict": true,
+	"globalstrict": false,
 	"iterator": false,
 	"lastsemic": false,
 	"laxbreak": false,
@@ -73,25 +65,47 @@
 	"passfail": false,
 	"white": false,
 	"predef": [
-		"Meteor",
-		"Accounts",
-		"Session",
-		"Template",
-		"check",
-		"Match",
-		"Deps",
-		"EJSON",
-		"Email",
-		"Package",
-		"Tinytest",
-		"Npm",
+		"App",
 		"Assets",
-		"Packages",
-		"process",
+		"Cordova",
+		"DDP",
+		"DDPServer",
+		"Deps",
+		"DomUtils",
+		"EJSON",
+		"Ground",
 		"LocalCollection",
-		"_",
+		"Meteor",
+		"MiniMax",
+		"Minimongo",
+		"Mongo",
+		"MongoInternals",
+		"Npm",
+		"Package",
 		"Random",
-		"HTTP",
-		"_methodHTTP"
-	]
+		"ReactiveVar",
+		"SeededRandom",
+		"Tinytest",
+		"Tracker",
+		"_",
+		"_groundUtil",
+		"blurElement",
+		"canonicalizeHtml",
+		"clickElement",
+		"focusElement",
+		"getStyleProperty",
+		"makeTestConnection",
+		"pollUntil",
+		"renderToDiv",
+		"simplePoll",
+		"simulateEvent",
+		"testAsyncMulti",
+		"try_all_permutations",
+		"withCallbackLogger",
+		"MongoID"
+	],
+	"globals": {
+		"Ground": true,
+		"_groundUtil": true
+	}
 }

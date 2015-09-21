@@ -1,3 +1,5 @@
+/* global _groundUtil:true */
+/* global Ground:true */
 // Define the utillity scope
 _groundUtil = {};
 
@@ -5,5 +7,6 @@ _groundUtil = {};
 Ground = {};
 
 // Meteor.Collection or Mongo.Collection
-_groundUtil.Collection = (typeof Mongo !== 'undefined')? Mongo.Collection: Meteor.Collection;
+_groundUtil.Collection = (typeof Mongo !== 'undefined')?
+        Mongo.Collection: Meteor.Collection;
 

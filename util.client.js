@@ -1,23 +1,27 @@
+/* global _groundUtil:false */
 ////////////////////////////////////////////////////////////////////////////////
 // MAP METEOR API's
 ////////////////////////////////////////////////////////////////////////////////
 
 // Access the DDP connection class
-try {
-  var _DDP = Package.ddp.LivedataTest;
-  if (_DDP) {
-    _DDP = _DDP.Connection;
-  } else {
-    _DDP = Meteor.connection.constructor;
-  }
+var _DDP;
 
-  _groundUtil.Connection = _DDP;
+try {
+  _DDP = Package.ddp.LivedataTest;
+  _DDP = _DDP.Connection;
+
 } catch(err) {
+  _DDP = Meteor.connection.constructor;
+}
+
+_groundUtil.Connection = _DDP;
+
+if (!_DDP) {
   throw new Error('GroundDB cannot access the DDP.Connection class');
 }
 
 // Meteor connection
-_groundUtil.connection = _groundUtil.connection || Meteor.default_connection;
+_groundUtil.connection = _groundUtil.connection || Meteor.default_connection; // jshint ignore:line
 
 // ParseId function
 _groundUtil.idParse = LocalCollection && LocalCollection._idParse ||
@@ -36,7 +40,7 @@ _groundUtil.setDatabaseMap = function(col, map) {
 
 _groundUtil.invalidateDb = function(col) {
   // We need to invalidate all listening queries
-  _.each(col._collection.queries, function(query, i) {
+  _.each(col._collection.queries, function(query) {
     // This db has changed big time...
     query.changed();
   });
