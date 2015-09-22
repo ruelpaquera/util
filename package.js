@@ -1,6 +1,6 @@
 Package.describe({
   name: "ground:util",
-  version: "0.1.15",
+  version: "0.1.16",
   summary: "Adds utillity functions for ground db to use",
   git: "https://github.com/GroundMeteor/util.git"
 });
@@ -11,7 +11,7 @@ Package.onUse(function (api) {
   api.export('_groundUtil');
   api.export('Ground');
 
-  api.versionsFrom('1.2-rc.15');
+  api.versionsFrom('1.2');
 
   api.use([
     'meteor',
