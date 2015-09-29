@@ -79,6 +79,7 @@
 		"MiniMax",
 		"Minimongo",
 		"Mongo",
+		"MongoID",
 		"MongoInternals",
 		"Npm",
 		"Package",
@@ -92,6 +93,7 @@
 		"blurElement",
 		"canonicalizeHtml",
 		"clickElement",
+		"clickIt",
 		"focusElement",
 		"getStyleProperty",
 		"makeTestConnection",
@@ -101,8 +103,7 @@
 		"simulateEvent",
 		"testAsyncMulti",
 		"try_all_permutations",
-		"withCallbackLogger",
-		"MongoID"
+		"withCallbackLogger"
 	],
 	"globals": {
 		"Ground": true,
