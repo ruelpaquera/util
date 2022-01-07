@@ -11,7 +11,7 @@ Package.onUse(function (api) {
   api.export('_groundUtil');
   api.export('Ground');
 
-  api.versionsFrom('1.2');
+  // api.versionsFrom('1.2');
 
   api.use([
     'meteor',
@@ -23,7 +23,7 @@ Package.onUse(function (api) {
     'minimongo',
     'ejson',
     'reactive-var',
-    'ground:minimax@1.1.3'
+    'ground:minimax'
     ], ['client', 'server']);
 
   api.imply('ground:minimax', ['client', 'server']);
